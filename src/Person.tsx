@@ -1,4 +1,5 @@
 // import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { People } from "./People.tsx";
 export default function Person(props: People) {
   let {
@@ -12,23 +13,14 @@ export default function Person(props: People) {
     skin_color,
     url,
   } = props;
-  //   const [loading, setLoading] = useState(false);
-  // console.log(props);
-  //   useEffect(() => {
-  //     setLoading(true);
-  //     // hay id? si hay id, busca ese people
-  //     fetch("https://swapi.dev/api/people/")
-  //       .then((res) => res.json())
-  //       .then((body) => {
-  //         setPersons(body.results);
-  //         setLoading(false);
-  //       });
-  //   }, []);
+  const navigate = useNavigate();
+
   function clickHandler() {
     const ident = url;
     var regex = /(\d+)/g;
-    const ide = ident.match(regex);
-    window.location.assign(window.location.href + "?id=" + ide);
+    const id = ident.match(regex);
+    navigate("/people/" + id);
+    // window.location.assign(window.location.href + "?id=" + ide);
     return;
   }
   return (

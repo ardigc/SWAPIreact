@@ -1,9 +1,7 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
 import Person from "./Person.tsx";
-import BigPerson from "./BigPerson.tsx";
 import { Header } from "./header.tsx";
-
 export interface People {
   name: string;
   height: string;
@@ -41,66 +39,31 @@ export default function People() {
       hair_color: "",
     },
   ]);
-  const [person, setPerson] = useState<People>({
-    homeworld: "",
-    starships: [],
-    species: "",
-    vehicles: [],
-    mass: "",
-    skin_color: "",
-    url: "",
-    name: "",
-    height: "",
-    birth_year: "",
-    eye_color: "",
-    gender: "",
-    films: [],
-    hair_color: "",
-  });
-  const search = new URLSearchParams(window.location.search);
-  const id = search.get("id");
+
+  // const search = new URLSearchParams(window.location.search);
+  // const id = search.get("id");
 
   useEffect(() => {
     setLoading(true);
     // hay id? si hay id, busca ese people
-    if (id === null) {
-      fetch("https://swapi.dev/api/people/")
-        .then((res) => res.json())
-        .then((body) => {
-          setPersons(body.results);
-          setLoading(false);
-        });
-    } else {
-      fetch("https://swapi.dev/api/people/" + id)
-        .then((res) => res.json())
-        .then((body) => {
-          setPerson(body);
-          setLoading(false);
-        });
-    }
+    fetch("https://swapi.dev/api/people/")
+      .then((res) => res.json())
+      .then((body) => {
+        setPersons(body.results);
+        setLoading(false);
+      });
   }, []);
 
-  if (id !== null) {
-    return (
-      <div>
-        <Header />
-        <div className="grid-big top-margin">
-          <BigPerson {...person} />
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <Header />
+  return (
+    <div>
+      <Header />
 
-        <div className="grid top-margin">
-          {persons.map((detail) => (
-            <Person {...detail} />
-          ))}
-          {loading && <div className="loading" />}
-        </div>
+      <div className="grid top-margin">
+        {persons.map((detail) => (
+          <Person {...detail} />
+        ))}
+        {loading && <div className="loading" />}
       </div>
-    );
-  }
+    </div>
+  );
 }
