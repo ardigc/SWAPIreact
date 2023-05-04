@@ -16,7 +16,6 @@ export default function BigPerson(props: People) {
     species,
     starships,
     vehicles,
-    url,
   } = props;
   //   const [loading, setLoading] = useState(false);
 
@@ -47,8 +46,17 @@ export default function BigPerson(props: People) {
         ))}
       </div>
       <div className="item-box">
+        Homeworld : <NameInt urls={homeworld} />
+      </div>
+      <div className="item-box">
         Starships:{" "}
         {starships.map((urls) => (
+          <NameInt urls={urls} />
+        ))}
+      </div>
+      <div className="item-box">
+        Species:{" "}
+        {species.map((urls) => (
           <NameInt urls={urls} />
         ))}
       </div>
@@ -57,12 +65,6 @@ export default function BigPerson(props: People) {
         {vehicles.map((urls) => (
           <NameInt urls={urls} />
         ))}
-      </div>
-      <div className="item-box">
-        Species: <NameInt urls={species} />
-      </div>
-      <div className="item-box">
-        Homeworld : <NameInt urls={homeworld} />
       </div>
       <div className="item-box">Hair color: {hair_color}</div>
       {/* <div className="item-box">Homeworld: {homeworld}</div> */}

@@ -13,7 +13,7 @@ export interface People {
   homeworld: string;
   mass: string;
   skin_color: string;
-  species: string;
+  species: Array<string>;
   starships: Array<string>;
   vehicles: Array<string>;
   url: string;
@@ -25,7 +25,7 @@ export default function People() {
     {
       homeworld: "",
       starships: [],
-      species: "",
+      species: [],
       vehicles: [],
       mass: "",
       skin_color: "",
@@ -57,12 +57,12 @@ export default function People() {
   return (
     <div>
       <Header />
+      {loading && <div className="loading" />}
 
       <div className="grid top-margin">
         {persons.map((detail) => (
           <Person {...detail} />
         ))}
-        {loading && <div className="loading" />}
       </div>
     </div>
   );

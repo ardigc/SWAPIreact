@@ -10,7 +10,7 @@ export default function PersonPage() {
   const [person, setPerson] = useState<People>({
     homeworld: "",
     starships: [],
-    species: "",
+    species: [],
     vehicles: [],
     mass: "",
     skin_color: "",
@@ -25,7 +25,6 @@ export default function PersonPage() {
   });
   const params = useParams();
   const id = params.personId;
-  console.log(params);
   useEffect(() => {
     fetch("https://swapi.dev/api/people/" + id)
       .then((res) => res.json())
@@ -34,9 +33,14 @@ export default function PersonPage() {
         setLoading(false);
       });
   }, []);
+  console.log(person);
+
+  // console.log(person.homeworld);
   return (
     <div>
       <Header />
+      {loading && <div className="loading" />}
+
       <div className="grid-big top-margin">
         <BigPerson {...person} />
       </div>

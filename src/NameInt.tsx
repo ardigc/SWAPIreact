@@ -11,7 +11,7 @@ export default function NameInt(props: { urls: string }) {
     fetch(urls)
       .then((res) => res.json())
       .then((body) => {
-        // console.log(body);
+        console.log(body);
         if (body.name === undefined) {
           setName(body.title);
         } else {
