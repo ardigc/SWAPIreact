@@ -30,17 +30,10 @@ export default function BigPerson(props: People) {
   //         setLoading(false);
   //       });
   //   }, []);
-  function clickHandler() {
-    const ident = url;
-    var regex = /(\d+)/g;
-    const ide = ident.match(regex);
-    window.location.assign(window.location.href + "?id=" + ide);
-    return;
-  }
-  console.log(homeworld);
-  //   films.map((film) => console.log(film));
+
+  films.map((film) => console.log(film));
   return (
-    <div className="grid-person-big" onClick={() => clickHandler()}>
+    <div className="grid-person-big">
       <div className="name-box">{name}</div>
       <div className="item-box">Height: {height}</div>
       <div className="item-box">Birth year: {birth_year}</div>
