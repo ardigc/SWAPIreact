@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
+import Person from "./Person.tsx";
 
 interface People {
   name: string;
@@ -8,7 +9,7 @@ interface People {
 
 export default function App() {
   const [loading, setLoading] = useState(false);
-  const [person, setPerson] = useState<People[]>([{ name: "", height: "" }]);
+  const [persons, setPersons] = useState<People[]>([{ name: "", height: "" }]);
 
   useEffect(() => {
     setLoading(true);
@@ -16,14 +17,18 @@ export default function App() {
     fetch("https://swapi.dev/api/people/")
       .then((res) => res.json())
       .then((body) => {
-        setPerson(body.results);
+        setPersons(body.results);
         setLoading(false);
       });
   }, []);
-
+  // const gridpersons = document.querySelector(".grid-persons")
+  // const person = persons.map(createperson)
+  // gridpersons.append(...persons)
   return (
     <div>
-      <p>{person[0].name}</p>
+      {persons.map((detail) => (
+        <Person {...detail} />
+      ))}
       {loading && <div className="loading" />}
     </div>
   );
