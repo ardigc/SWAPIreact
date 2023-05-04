@@ -15,7 +15,11 @@
   border-radius: 9999px;
   animation: spin 1s linear infinite;
 }
-
+.category-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -23,6 +27,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100%;
+  color: #c8c8c8;
+  background-color: #202327;
+}
+.category-box {
+  display: grid;
+  grid-template-rows: 2rem 1fr;
+  /* min-height: 13.5rem; */
+  border: solid 1px black;
+  cursor: pointer;
+}
+.category-box:hover {
+  background-color: #00000086;
+}
+.category-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
 }
 /* .grid {
   display: grid;
