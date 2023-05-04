@@ -62,7 +62,7 @@
   display: grid;
   grid-template-areas: "name name name";
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 4rem repeat(6, 5rem);
+  grid-template-rows: 4rem repeat(6, 6rem);
   border: solid 1px black;
   background-color: #202327;
   color: #c8c8c8;

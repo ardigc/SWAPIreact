@@ -39,7 +39,7 @@ export default function BigPerson(props: People) {
   }
   films.map((film) => console.log(film));
   return (
-    <button className="grid-person-big" onClick={() => clickHandler()}>
+    <div className="grid-person-big" onClick={() => clickHandler()}>
       <div className="name-box">{name}</div>
       <div className="item-box">Height: {height}</div>
       <div className="item-box">Birth year: {birth_year}</div>
@@ -62,6 +62,6 @@ export default function BigPerson(props: People) {
       {/* <div className="item-box">Homeworld: {homeworld}</div> */}
       {/* {loading && <div className="loading" />} */}
       <div className="item-box">Skin color: {skin_color}</div>
-    </button>
+    </div>
   );
 }
