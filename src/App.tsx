@@ -2,14 +2,43 @@ import "./styles.css";
 import { useEffect, useState } from "react";
 import Person from "./Person.tsx";
 
-interface People {
+export interface People {
   name: string;
   height: string;
+  birth_year: string;
+  eye_color: string;
+  gender: string;
+  films: Array<string>;
+  hair_color: string;
+  homeworld: string;
+  mass: string;
+  skin_color: string;
+  species: Array<string>;
+  starships: Array<string>;
+  vehicles: Array<string>;
+  url: string;
 }
 
 export default function App() {
   const [loading, setLoading] = useState(false);
-  const [persons, setPersons] = useState<People[]>([{ name: "", height: "" }]);
+  const [persons, setPersons] = useState<People[]>([
+    {
+      homeworld: "",
+      starships: [],
+      species: [],
+      vehicles: [],
+      mass: "",
+      skin_color: "",
+      url: "",
+      name: "",
+      height: "",
+      birth_year: "",
+      eye_color: "",
+      gender: "",
+      films: [],
+      hair_color: "",
+    },
+  ]);
 
   useEffect(() => {
     setLoading(true);
@@ -26,9 +55,11 @@ export default function App() {
   // gridpersons.append(...persons)
   return (
     <div>
-      {persons.map((detail) => (
-        <Person {...detail} />
-      ))}
+      <div className="grid">
+        {persons.map((detail) => (
+          <Person {...detail} />
+        ))}
+      </div>
       {loading && <div className="loading" />}
     </div>
   );
