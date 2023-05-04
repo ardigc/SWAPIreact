@@ -1,19 +1,25 @@
 // import { useEffect, useState } from "react";
 import { People } from "./App.tsx";
-export default function Person(props: People) {
+import NameInt from "./NameInt.tsx";
+export default function BigPerson(props: People) {
   let {
     name,
     height,
     birth_year,
     eye_color,
     gender,
+    films,
     hair_color,
+    homeworld,
     mass,
     skin_color,
+    species,
+    starships,
+    vehicles,
     url,
   } = props;
   //   const [loading, setLoading] = useState(false);
-  console.log(props);
+
   //   useEffect(() => {
   //     setLoading(true);
   //     // hay id? si hay id, busca ese people
@@ -32,14 +38,16 @@ export default function Person(props: People) {
     return;
   }
   return (
-    <button className="grid-persons" onClick={() => clickHandler()}>
+    <button className="grid-person" onClick={() => clickHandler()}>
       <div className="name-box">{name}</div>
       <div className="item-box">Height: {height}</div>
       <div className="item-box">Birth year: {birth_year}</div>
       <div className="item-box">Eye color: {eye_color}</div>
       <div className="item-box">Gender: {gender}</div>
       <div className="item-box">Mass: {mass}</div>
-      {/* <div>Fims: {films}</div> */}
+      <div>
+        Fims: <NameInt urls={films} />
+      </div>
       <div className="item-box">Hair color: {hair_color}</div>
       {/* <div className="item-box">Homeworld: {homeworld}</div> */}
       {/* {loading && <div className="loading" />} */}

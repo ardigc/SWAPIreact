@@ -1,6 +1,7 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
 import Person from "./Person.tsx";
+import BigPerson from "./BigPerson.tsx";
 
 export interface People {
   name: string;
@@ -39,30 +40,57 @@ export default function App() {
       hair_color: "",
     },
   ]);
+  const [person, setPerson] = useState<People>({
+    homeworld: "",
+    starships: [],
+    species: [],
+    vehicles: [],
+    mass: "",
+    skin_color: "",
+    url: "",
+    name: "",
+    height: "",
+    birth_year: "",
+    eye_color: "",
+    gender: "",
+    films: [],
+    hair_color: "",
+  });
+  const search = new URLSearchParams(window.location.search);
+  const id = search.get("id");
 
   useEffect(() => {
     setLoading(true);
     // hay id? si hay id, busca ese people
-    fetch("https://swapi.dev/api/people/")
-      .then((res) => res.json())
-      .then((body) => {
-        setPersons(body.results);
-        setLoading(false);
-      });
+    if (id === null) {
+      fetch("https://swapi.dev/api/people/")
+        .then((res) => res.json())
+        .then((body) => {
+          setPersons(body.results);
+          setLoading(false);
+        });
+    } else {
+      fetch("https://swapi.dev/api/people/" + id)
+        .then((res) => res.json())
+        .then((body) => {
+          setPerson(body);
+          setLoading(false);
+        });
+    }
   }, []);
-  // const gridpersons = document.querySelector(".grid-persons")
-  // const person = persons.map(createperson)
-  // gridpersons.append(...persons)
-  if (false) {
-    return <div>// La caja grande correspondiente al ID</div>;
+
+  if (id !== null) {
+    return (
+      <div className="grid-big">
+        <BigPerson {...person} />
+      </div>
+    );
   } else {
     return (
-      <div>
-        <div className="grid">
-          {persons.map((detail) => (
-            <Person {...detail} />
-          ))}
-        </div>
+      <div className="grid">
+        {persons.map((detail) => (
+          <Person {...detail} />
+        ))}
         {loading && <div className="loading" />}
       </div>
     );
