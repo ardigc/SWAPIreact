@@ -1,18 +1,29 @@
-// import { useEffect, useState } from "react";
-export default function NameInt(props: { urls: Array<string> }) {
+import { useEffect, useState } from "react";
+export default function NameInt(props: { urls: string }) {
   let urls = props.urls;
-  //   const [loading, setLoading] = useState(false);
-  console.log(props);
-  //   useEffect(() => {
-  //     setLoading(true);
-  //     // hay id? si hay id, busca ese people
-  //     fetch("https://swapi.dev/api/people/")
-  //       .then((res) => res.json())
-  //       .then((body) => {
-  //         setPersons(body.results);
-  //         setLoading(false);
-  //       });
-  //   }, []);
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  console.log(urls);
+  useEffect(() => {
+    setLoading(true);
+    // hay id? si hay id, busca ese people
+    fetch(urls)
+      .then((res) => res.json())
+      .then((body) => {
+        console.log(body.name);
+        if (body.name === undefined) {
+          setName(body.title + "  ");
+        } else {
+          setName(body.name + "  ");
+        }
+        setLoading(false);
+      });
+  }, []);
 
-  return <a></a>;
+  return (
+    <a>
+      {/* {loading && <div className="loading" />} */}
+      {name}
+    </a>
+  );
 }
