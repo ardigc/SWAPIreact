@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import People from "./People.tsx";
+import People from "./People/People.tsx";
 import App from "./App.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import PersonPage from "./PersonPage.tsx";
+import PersonPage from "./People/PersonPage.tsx";
+import StarShips from "./Ships/StarShips.tsx";
+import ShipPage from "./Ships/ShipPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +17,16 @@ const router = createBrowserRouter([
     element: <People />,
   },
   {
+    path: "/starships",
+    element: <StarShips />,
+  },
+  {
     path: "/people/:personId",
     element: <PersonPage />,
+  },
+  {
+    path: "/starships/:personId",
+    element: <ShipPage />,
   },
 ]);
 

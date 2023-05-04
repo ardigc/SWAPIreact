@@ -1,7 +1,7 @@
-import "./styles.css";
+import "../styles.css";
 import { useEffect, useState } from "react";
 import Person from "./Person.tsx";
-import { Header } from "./header.tsx";
+import { Header } from "../header.tsx";
 export interface People {
   name: string;
   height: string;

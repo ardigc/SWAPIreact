@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import "./styles.css";
+import "../styles.css";
 import { useEffect, useState } from "react";
 import BigPerson from "./BigPerson.tsx";
-import { Header } from "./header.tsx";
+import { Header } from "../header.tsx";
 import { People } from "./People.tsx";
 
 export default function PersonPage() {
