@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 export default function NameInt(props: { urls: string }) {
   let urls = props.urls;
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
-  //   console.log(urls);
+  // console.log(urls);
+  const nuevaUrl = urls.substring("https://swapi.dev/api".length);
+  console.log(nuevaUrl);
   useEffect(() => {
     setLoading(true);
     // hay id? si hay id, busca ese people
@@ -23,10 +26,10 @@ export default function NameInt(props: { urls: string }) {
 
   return (
     <div className="item-box">
-      <a>
+      <Link to={nuevaUrl}>
         {loading && <div className="mini-loading" />}
         {name}
-      </a>
+      </Link>
     </div>
   );
 }
