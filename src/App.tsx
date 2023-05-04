@@ -1,3 +1,4 @@
+import "./styles.css";
 import { useEffect, useState } from "react";
 
 export default function App() {
@@ -5,15 +6,19 @@ export default function App() {
   const [person, setPerson] = useState<{ name: string }>({ name: "" });
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://swapi.dev/api/people/1/")
       .then((res) => res.json())
-      .then((body) => setPerson(body));
+      .then((body) => {
+        setLoading(false);
+        setPerson(body);
+      });
   }, []);
 
   return (
     <div>
       <p>{person.name}</p>
-      {loading && <p>Loading...</p>}
+      {loading && <div className="loading" />}
     </div>
   );
 }
