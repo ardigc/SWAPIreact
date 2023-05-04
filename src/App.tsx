@@ -10,8 +10,8 @@ export default function App() {
     fetch("https://swapi.dev/api/people/1/")
       .then((res) => res.json())
       .then((body) => {
-        setLoading(false);
         setPerson(body);
+        setLoading(false);
       });
   }, []);
 
