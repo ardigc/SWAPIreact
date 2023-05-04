@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import { People } from "./App.tsx";
+import { People } from "./People.tsx";
 import NameInt from "./NameInt.tsx";
 export default function BigPerson(props: People) {
   let {

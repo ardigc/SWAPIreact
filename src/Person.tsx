@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import { People } from "./App.tsx";
+import { People } from "./People.tsx";
 export default function Person(props: People) {
   let {
     name,
