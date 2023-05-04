@@ -13,7 +13,7 @@ export default function Person(props: People) {
     url,
   } = props;
   //   const [loading, setLoading] = useState(false);
-  console.log(props);
+  // console.log(props);
   //   useEffect(() => {
   //     setLoading(true);
   //     // hay id? si hay id, busca ese people

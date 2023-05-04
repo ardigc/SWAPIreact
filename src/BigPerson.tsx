@@ -31,7 +31,7 @@ export default function BigPerson(props: People) {
   //       });
   //   }, []);
 
-  films.map((film) => console.log(film));
+  // films.map((film) => console.log(film));
   return (
     <div className="grid-person-big">
       <div className="name-box">{name}</div>
@@ -62,7 +62,7 @@ export default function BigPerson(props: People) {
         Species: <NameInt urls={species} />
       </div>
       <div className="item-box">
-        Homeworld: <NameInt urls={homeworld} />
+        Homeworld : <NameInt urls={homeworld} />
       </div>
       <div className="item-box">Hair color: {hair_color}</div>
       {/* <div className="item-box">Homeworld: {homeworld}</div> */}

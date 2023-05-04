@@ -2,6 +2,7 @@ import "./styles.css";
 import { useEffect, useState } from "react";
 import Person from "./Person.tsx";
 import BigPerson from "./BigPerson.tsx";
+import { Header } from "./header.tsx";
 
 export interface People {
   name: string;
@@ -81,17 +82,24 @@ export default function People() {
 
   if (id !== null) {
     return (
-      <div className="relative flex flex-row items-center">
-        <BigPerson {...person} />
+      <div>
+        <Header />
+        <div className="grid-big top-margin">
+          <BigPerson {...person} />
+        </div>
       </div>
     );
   } else {
     return (
-      <div className="grid grid-cols-2 ">
-        {persons.map((detail) => (
-          <Person {...detail} />
-        ))}
-        {loading && <div className="loading" />}
+      <div>
+        <Header />
+
+        <div className="grid top-margin">
+          {persons.map((detail) => (
+            <Person {...detail} />
+          ))}
+          {loading && <div className="loading" />}
+        </div>
       </div>
     );
   }
