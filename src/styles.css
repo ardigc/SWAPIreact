@@ -24,10 +24,10 @@
     transform: rotate(360deg);
   }
 }
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
+} */
 .grid-big {
   position: relative;
   display: grid;
