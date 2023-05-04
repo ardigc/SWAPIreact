@@ -32,7 +32,10 @@ export default function Person(props: People) {
     return;
   }
   return (
-    <button className="grid-persons" onClick={() => clickHandler()}>
+    <button
+      className="grid-persons bg-gray-700 hover:bg-gray-800"
+      onClick={() => clickHandler()}
+    >
       <div className="name-box">{name}</div>
       <div className="item-box">Height: {height}</div>
       <div className="item-box">Birth year: {birth_year}</div>

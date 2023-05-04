@@ -81,13 +81,13 @@ export default function App() {
 
   if (id !== null) {
     return (
-      <div className="grid-big">
+      <div className="relative flex flex-row items-center">
         <BigPerson {...person} />
       </div>
     );
   } else {
     return (
-      <div className="grid">
+      <div className="grid grid-cols-2 ">
         {persons.map((detail) => (
           <Person {...detail} />
         ))}
