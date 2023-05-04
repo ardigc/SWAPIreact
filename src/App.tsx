@@ -14,7 +14,7 @@ export interface People {
   homeworld: string;
   mass: string;
   skin_color: string;
-  species: Array<string>;
+  species: string;
   starships: Array<string>;
   vehicles: Array<string>;
   url: string;
@@ -26,7 +26,7 @@ export default function App() {
     {
       homeworld: "",
       starships: [],
-      species: [],
+      species: "",
       vehicles: [],
       mass: "",
       skin_color: "",
@@ -43,7 +43,7 @@ export default function App() {
   const [person, setPerson] = useState<People>({
     homeworld: "",
     starships: [],
-    species: [],
+    species: "",
     vehicles: [],
     mass: "",
     skin_color: "",

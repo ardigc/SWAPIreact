@@ -37,7 +37,8 @@ export default function BigPerson(props: People) {
     window.location.assign(window.location.href + "?id=" + ide);
     return;
   }
-  films.map((film) => console.log(film));
+  console.log(homeworld);
+  //   films.map((film) => console.log(film));
   return (
     <div className="grid-person-big" onClick={() => clickHandler()}>
       <div className="name-box">{name}</div>
@@ -57,6 +58,18 @@ export default function BigPerson(props: People) {
         {starships.map((urls) => (
           <NameInt urls={urls} />
         ))}
+      </div>
+      <div className="item-box">
+        Vehicles:{" "}
+        {vehicles.map((urls) => (
+          <NameInt urls={urls} />
+        ))}
+      </div>
+      <div className="item-box">
+        Species: <NameInt urls={species} />
+      </div>
+      <div className="item-box">
+        Homeworld: <NameInt urls={homeworld} />
       </div>
       <div className="item-box">Hair color: {hair_color}</div>
       {/* <div className="item-box">Homeworld: {homeworld}</div> */}
