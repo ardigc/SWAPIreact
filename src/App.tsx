@@ -53,14 +53,18 @@ export default function App() {
   // const gridpersons = document.querySelector(".grid-persons")
   // const person = persons.map(createperson)
   // gridpersons.append(...persons)
-  return (
-    <div>
-      <div className="grid">
-        {persons.map((detail) => (
-          <Person {...detail} />
-        ))}
+  if (false) {
+    return <div>// La caja grande correspondiente al ID</div>;
+  } else {
+    return (
+      <div>
+        <div className="grid">
+          {persons.map((detail) => (
+            <Person {...detail} />
+          ))}
+        </div>
+        {loading && <div className="loading" />}
       </div>
-      {loading && <div className="loading" />}
-    </div>
-  );
+    );
+  }
 }
