@@ -26,6 +26,7 @@ export default function VehiclePage() {
   const params = useParams();
   const id = params.personId;
   useEffect(() => {
+    setLoading(true);
     fetch("https://swapi.dev/api/vehicles/" + id)
       .then((res) => res.json())
       .then((body) => {
@@ -36,12 +37,12 @@ export default function VehiclePage() {
 
   console.log(vehicle);
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid-big top-margin">
-        <BigVehicle {...vehicle} />
+        {loading && <div className="loading" />}
+
+        {!loading && <BigVehicle {...vehicle} />}
       </div>
     </div>
   );

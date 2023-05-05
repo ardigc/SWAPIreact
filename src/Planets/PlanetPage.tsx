@@ -24,6 +24,7 @@ export default function PlanetPage() {
   const params = useParams();
   const id = params.personId;
   useEffect(() => {
+    setLoading(true);
     fetch("https://swapi.dev/api/planets/" + id)
       .then((res) => res.json())
       .then((body) => {
@@ -34,12 +35,11 @@ export default function PlanetPage() {
 
   // console.log(person.homeworld);
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid-big top-margin">
-        <BigPlanet {...planet} />
+        {loading && <div className="loading" />}
+        {!loading && <BigPlanet {...planet} />}
       </div>
     </div>
   );

@@ -28,6 +28,7 @@ export default function ShipPage() {
   const params = useParams();
   const id = params.personId;
   useEffect(() => {
+    setLoading(true);
     fetch("https://swapi.dev/api/starships/" + id)
       .then((res) => res.json())
       .then((body) => {
@@ -38,12 +39,12 @@ export default function ShipPage() {
 
   console.log(ship);
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid-big top-margin">
-        <BigShip {...ship} />
+        {loading && <div className="loading" />}
+
+        {!loading && <BigShip {...ship} />}
       </div>
     </div>
   );

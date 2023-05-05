@@ -24,6 +24,7 @@ export default function SpeciesPage() {
   const params = useParams();
   const id = params.personId;
   useEffect(() => {
+    setLoading(true);
     fetch("https://swapi.dev/api/species/" + id)
       .then((res) => res.json())
       .then((body) => {
@@ -33,12 +34,12 @@ export default function SpeciesPage() {
   }, []);
 
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid-big top-margin">
-        <Bigspecie {...species} />
+        {loading && <div className="loading" />}
+
+        {!loading && <Bigspecie {...species} />}
       </div>
     </div>
   );

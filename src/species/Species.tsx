@@ -51,14 +51,12 @@ export default function Species() {
   }, []);
   console.log(species);
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid top-margin">
-        {species.map((detail) => (
-          <Spec {...detail} />
-        ))}
+        {loading && <div className="loading" />}
+
+        {!loading && species.map((detail) => <Spec {...detail} />)}
       </div>
     </div>
   );

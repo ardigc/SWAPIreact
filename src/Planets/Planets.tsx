@@ -49,14 +49,12 @@ export default function Planets() {
   }, []);
 
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid top-margin">
-        {planets.map((detail) => (
-          <Planet {...detail} />
-        ))}
+        {loading && <div className="loading" />}
+
+        {!loading && planets.map((detail) => <Planet {...detail} />)}
       </div>
     </div>
   );

@@ -54,14 +54,12 @@ export default function Vehicles() {
   console.log(vehicles);
 
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid top-margin">
-        {vehicles.map((detail) => (
-          <Vehicle {...detail} />
-        ))}
+        {loading && <div className="loading" />}
+
+        {!loading && vehicles.map((detail) => <Vehicle {...detail} />)}
       </div>
     </div>
   );

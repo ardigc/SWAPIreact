@@ -36,12 +36,12 @@ export default function FilmsPage() {
 
   console.log(film);
   return (
-    <div>
+    <div className="color-back">
       <Header />
 
       <div className="grid-big top-margin">
         {loading && <div className="loading" />}
-        <BigFilm {...film} />
+        {!loading && <BigFilm {...film} />}
       </div>
     </div>
   );

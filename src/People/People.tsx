@@ -55,14 +55,12 @@ export default function People() {
   }, []);
 
   return (
-    <div>
+    <div className="color-back">
       <Header />
 
       <div className="grid top-margin">
         {loading && <div className="loading" />}
-        {persons.map((detail) => (
-          <Person {...detail} />
-        ))}
+        {!loading && persons.map((detail) => <Person {...detail} />)}
       </div>
     </div>
   );

@@ -50,14 +50,12 @@ export default function Films() {
   console.log(films);
 
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid top-margin">
-        {films.map((detail) => (
-          <Film {...detail} />
-        ))}
+        {loading && <div className="loading" />}
+
+        {!loading && films.map((detail) => <Film {...detail} />)}
       </div>
     </div>
   );

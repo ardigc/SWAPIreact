@@ -109,7 +109,11 @@
   background-color: #202327;
   color: #c8c8c8;
 }
-
+.color-back {
+  background-color: #202327;
+  height: 100vh;
+  width: 100vw;
+}
 .name-box {
   grid-area: name;
   display: flex;

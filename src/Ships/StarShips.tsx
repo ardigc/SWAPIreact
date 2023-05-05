@@ -59,14 +59,12 @@ export default function StarShips() {
   }, []);
 
   return (
-    <div>
+    <div className="color-back">
       <Header />
-      {loading && <div className="loading" />}
 
       <div className="grid top-margin">
-        {ships.map((detail) => (
-          <Ship {...detail} />
-        ))}
+        {loading && <div className="loading" />}
+        {!loading && ships.map((detail) => <Ship {...detail} />)}
       </div>
     </div>
   );
