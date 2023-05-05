@@ -4,6 +4,9 @@ export default function NameInt2(props: { urls: string }) {
   let urls = props.urls;
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
+  if (urls === null) {
+    return <div>Null</div>;
+  }
   console.log(name);
   const nuevaUrl = urls.substring("https://swapi.dev/api".length);
   useEffect(() => {

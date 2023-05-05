@@ -1,6 +1,7 @@
 // import { useEffect, useState } from "react";
 import { species } from "./Species.tsx";
 import NameInt from "../NameInt.tsx";
+import NameInt2 from "../NameInt2.tsx";
 export default function Bigspecie(props: species) {
   let {
     average_height,
@@ -48,7 +49,7 @@ export default function Bigspecie(props: species) {
         ))}
       </div>
       <div className="item-box">
-        Homeworld: <NameInt urls={homeworld} />
+        Homeworld: <NameInt2 urls={homeworld} />
       </div>
       <div className="item-box">
         People:{" "}
