@@ -1,6 +1,7 @@
 // import { useEffect, useState } from "react";
 import { People } from "./People.tsx";
 import NameInt from "../NameInt.tsx";
+import NameInt2 from "../NameInt2.tsx";
 export default function BigPerson(props: People) {
   let {
     name,
@@ -46,7 +47,7 @@ export default function BigPerson(props: People) {
         ))}
       </div>
       <div className="item-box">
-        Homeworld : <NameInt urls={homeworld} />
+        Homeworld : <NameInt2 urls={homeworld} />
       </div>
       <div className="item-box">
         Starships:{" "}

@@ -39,9 +39,9 @@ export default function PersonPage() {
   return (
     <div>
       <Header />
-      {loading && <div className="loading" />}
-
       <div className="grid-big top-margin">
+        {loading && <div className="loading" />}
+
         <BigPerson {...person} />
       </div>
     </div>

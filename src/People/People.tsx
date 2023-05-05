@@ -57,9 +57,9 @@ export default function People() {
   return (
     <div>
       <Header />
-      {loading && <div className="loading" />}
 
       <div className="grid top-margin">
+        {loading && <div className="loading" />}
         {persons.map((detail) => (
           <Person {...detail} />
         ))}
