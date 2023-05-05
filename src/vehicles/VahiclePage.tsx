@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import { Vehicled } from "./Vehicles.tsx";
 import BigVehicle from "./BigVehicle.tsx";
+import { Intro } from "../Intro.tsx";
 
 export default function VehiclePage() {
   const [loading, setLoading] = useState(false);
@@ -39,10 +40,13 @@ export default function VehiclePage() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid-big top-margin">
-        {loading && <div className="loading" />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid-big">
+          {loading && <div className="loading" />}
 
-        {!loading && <BigVehicle {...vehicle} />}
+          {!loading && <BigVehicle {...vehicle} />}
+        </div>
       </div>
     </div>
   );

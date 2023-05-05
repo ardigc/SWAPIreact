@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import { Planets } from "./Planets.tsx";
 import BigPlanet from "./BigPlanet.tsx";
+import { Intro } from "../Intro.tsx";
 
 export default function PlanetPage() {
   const [loading, setLoading] = useState(false);
@@ -37,9 +38,12 @@ export default function PlanetPage() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid-big top-margin">
-        {loading && <div className="loading" />}
-        {!loading && <BigPlanet {...planet} />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid-big ">
+          {loading && <div className="loading" />}
+          {!loading && <BigPlanet {...planet} />}
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import { Filmed } from "./Films.tsx";
 import BigFilm from "./BigFilm.tsx";
+import { Intro } from "../Intro.tsx";
 
 export default function FilmsPage() {
   const [loading, setLoading] = useState(false);
@@ -38,10 +39,12 @@ export default function FilmsPage() {
   return (
     <div className="color-back">
       <Header />
-
-      <div className="grid-big top-margin">
-        {loading && <div className="loading" />}
-        {!loading && <BigFilm {...film} />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid-big">
+          {loading && <div className="loading" />}
+          {!loading && <BigFilm {...film} />}
+        </div>
       </div>
     </div>
   );

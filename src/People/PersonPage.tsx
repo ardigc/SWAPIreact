@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import BigPerson from "./BigPerson.tsx";
 import { Header } from "../header.tsx";
 import { People } from "./People.tsx";
+import { Intro } from "../Intro.tsx";
 
 export default function PersonPage() {
   const [loading, setLoading] = useState(false);
@@ -40,13 +41,13 @@ export default function PersonPage() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid-big top-margin">
-        {loading && <div className="loading" />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid-big ">
+          {loading && <div className="loading" />}
 
-        {!loading && <BigPerson {...person} />}
-        {/* {loading && <div className="loading" />}
-
-        <BigPerson {...person} /> */}
+          {!loading && <BigPerson {...person} />}
+        </div>
       </div>
     </div>
   );

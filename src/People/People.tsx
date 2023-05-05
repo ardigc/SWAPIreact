@@ -2,6 +2,7 @@ import "../styles.css";
 import { useEffect, useState } from "react";
 import Person from "./Person.tsx";
 import { Header } from "../header.tsx";
+import { Intro } from "../Intro.tsx";
 export interface People {
   name: string;
   height: string;
@@ -57,10 +58,12 @@ export default function People() {
   return (
     <div className="color-back">
       <Header />
-
-      <div className="grid top-margin">
-        {loading && <div className="loading" />}
-        {!loading && persons.map((detail) => <Person {...detail} />)}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid">
+          {loading && <div className="loading" />}
+          {!loading && persons.map((detail) => <Person {...detail} />)}
+        </div>
       </div>
     </div>
   );

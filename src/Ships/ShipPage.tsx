@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import { Ships } from "./StarShips.tsx";
 import BigShip from "./BigShip.tsx";
+import { Intro } from "../Intro.tsx";
 
 export default function ShipPage() {
   const [loading, setLoading] = useState(false);
@@ -41,10 +42,13 @@ export default function ShipPage() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid-big top-margin">
-        {loading && <div className="loading" />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid-big">
+          {loading && <div className="loading" />}
 
-        {!loading && <BigShip {...ship} />}
+          {!loading && <BigShip {...ship} />}
+        </div>
       </div>
     </div>
   );

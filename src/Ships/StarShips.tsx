@@ -2,6 +2,7 @@ import "../styles.css";
 import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import Ship from "./Ship.tsx";
+import { Intro } from "../Intro.tsx";
 export interface Ships {
   MGLT: string;
   cargo_capacity: string;
@@ -61,10 +62,12 @@ export default function StarShips() {
   return (
     <div className="color-back">
       <Header />
-
-      <div className="grid top-margin">
-        {loading && <div className="loading" />}
-        {!loading && ships.map((detail) => <Ship {...detail} />)}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid">
+          {loading && <div className="loading" />}
+          {!loading && ships.map((detail) => <Ship {...detail} />)}
+        </div>
       </div>
     </div>
   );

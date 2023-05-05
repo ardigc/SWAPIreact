@@ -2,6 +2,7 @@ import "../styles.css";
 import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import Vehicle from "./Vehicle.tsx";
+import { Intro } from "../Intro.tsx";
 export interface Vehicled {
   cargo_capacity: string;
   consumables: string;
@@ -56,10 +57,12 @@ export default function Vehicles() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid top-margin">
-        {loading && <div className="loading" />}
-
-        {!loading && vehicles.map((detail) => <Vehicle {...detail} />)}
+      <div className="top-margin">
+        <Intro title={"Vehicles"} />
+        <div className="grid">
+          {loading && <div className="loading" />}
+          {!loading && vehicles.map((detail) => <Vehicle {...detail} />)}
+        </div>
       </div>
     </div>
   );

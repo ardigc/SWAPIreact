@@ -2,6 +2,7 @@ import "../styles.css";
 import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import Film from "./Film.tsx";
+import { Intro } from "../Intro.tsx";
 export interface Filmed {
   characters: Array<string>;
   director: string;
@@ -52,10 +53,13 @@ export default function Films() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid top-margin">
-        {loading && <div className="loading" />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid">
+          {loading && <div className="loading" />}
 
-        {!loading && films.map((detail) => <Film {...detail} />)}
+          {!loading && films.map((detail) => <Film {...detail} />)}
+        </div>
       </div>
     </div>
   );

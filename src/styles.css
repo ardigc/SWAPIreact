@@ -75,6 +75,9 @@
 .category-box:hover {
   background-color: #00000086;
 }
+.intro {
+  color: aliceblue;
+}
 .category-image {
   display: flex;
   align-items: center;

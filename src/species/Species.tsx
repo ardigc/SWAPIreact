@@ -2,6 +2,7 @@ import "../styles.css";
 import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import Spec from "./Specie.tsx";
+import { Intro } from "../Intro.tsx";
 export interface species {
   average_height: string;
   average_lifespan: string;
@@ -53,10 +54,13 @@ export default function Species() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid top-margin">
-        {loading && <div className="loading" />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid">
+          {loading && <div className="loading" />}
 
-        {!loading && species.map((detail) => <Spec {...detail} />)}
+          {!loading && species.map((detail) => <Spec {...detail} />)}
+        </div>
       </div>
     </div>
   );

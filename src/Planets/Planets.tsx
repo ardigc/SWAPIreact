@@ -2,6 +2,7 @@ import "../styles.css";
 import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
 import Planet from "./Planet.tsx";
+import { Intro } from "../Intro.tsx";
 export interface Planets {
   name: string;
   climate: string;
@@ -51,10 +52,13 @@ export default function Planets() {
   return (
     <div className="color-back">
       <Header />
-      <div className="grid top-margin">
-        {loading && <div className="loading" />}
+      <div className="top-margin">
+        <Intro />
+        <div className="grid">
+          {loading && <div className="loading" />}
 
-        {!loading && planets.map((detail) => <Planet {...detail} />)}
+          {!loading && planets.map((detail) => <Planet {...detail} />)}
+        </div>
       </div>
     </div>
   );
