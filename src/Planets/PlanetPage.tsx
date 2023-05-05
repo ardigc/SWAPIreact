@@ -24,7 +24,7 @@ export default function PlanetPage() {
   const params = useParams();
   const id = params.personId;
   useEffect(() => {
-    fetch("https://swapi.dev/api/people/" + id)
+    fetch("https://swapi.dev/api/planets/" + id)
       .then((res) => res.json())
       .then((body) => {
         setPlanet(body);

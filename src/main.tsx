@@ -7,6 +7,7 @@ import PersonPage from "./People/PersonPage.tsx";
 import StarShips from "./Ships/StarShips.tsx";
 import Planets from "./Planets/Planets.tsx";
 import ShipPage from "./Ships/ShipPage.tsx";
+import PlanetPage from "./Planets/PlanetPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/starships/:personId",
     element: <ShipPage />,
+  },
+  {
+    path: "/planets/:personId",
+    element: <PlanetPage />,
   },
 ]);
 
