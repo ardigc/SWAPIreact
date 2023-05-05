@@ -36,7 +36,7 @@ export default function BigShip(props: Ships) {
       <div className="item-box">
         Max atmosphering speed: {max_atmosphering_speed}
       </div>
-      <div className="item-box">
+      <div className="link-box">
         Fims:{" "}
         {films.map((urls) => (
           <NameInt urls={urls} />

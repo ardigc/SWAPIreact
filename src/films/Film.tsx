@@ -2,20 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { Filmed } from "./Films.tsx";
 export default function Film(props: Filmed) {
-  let {
-    characters,
-    director,
-    episode_id,
-    opening_crawl,
-    planets,
-    producer,
-    release_date,
-    species,
-    starships,
-    title,
-    url,
-    vehicles,
-  } = props;
+  let { director, episode_id, producer, release_date, title, url } = props;
   const navigate = useNavigate();
 
   function clickHandler() {

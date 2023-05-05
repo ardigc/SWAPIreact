@@ -2,46 +2,46 @@ import { useParams } from "react-router-dom";
 import "../styles.css";
 import { useEffect, useState } from "react";
 import { Header } from "../header.tsx";
-import { Vehicled } from "./Films.tsx";
-import BigVehicle from "./BigFilm.tsx";
+import { Filmed } from "./Films.tsx";
+import BigFilm from "./BigFilm.tsx";
 
-export default function VehiclePage() {
+export default function FilmsPage() {
   const [loading, setLoading] = useState(false);
-  const [vehicle, setVehicle] = useState<Vehicled>({
-    cargo_capacity: "",
-    consumables: "",
-    cost_in_credits: "",
-    crew: "",
-    films: [],
-    length: "",
-    manufacturer: "",
-    max_atmosphering_speed: "",
-    model: "",
-    name: "",
-    passengers: "",
-    pilots: [],
+  const [film, setFilm] = useState<Filmed>({
+    characters: [],
+    director: "",
+    episode_id: 0,
+    opening_crawl: "",
+    planets: [],
+    producer: "",
+    release_date: "",
+    species: [],
+    starships: [],
+    title: "",
     url: "",
-    vehicle_class: "",
+    vehicles: [],
   });
   const params = useParams();
   const id = params.personId;
   useEffect(() => {
-    fetch("https://swapi.dev/api/vehicles/" + id)
+    setLoading(true);
+
+    fetch("https://swapi.dev/api/films/" + id)
       .then((res) => res.json())
       .then((body) => {
-        setVehicle(body);
+        setFilm(body);
         setLoading(false);
       });
   }, []);
 
-  console.log(vehicle);
+  console.log(film);
   return (
     <div>
       <Header />
-      {loading && <div className="loading" />}
 
       <div className="grid-big top-margin">
-        <BigVehicle {...vehicle} />
+        {loading && <div className="loading" />}
+        <BigFilm {...film} />
       </div>
     </div>
   );

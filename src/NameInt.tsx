@@ -23,7 +23,7 @@ export default function NameInt(props: { urls: string }) {
   }, []);
 
   return (
-    <div className="item-box">
+    <div>
       <Link to={nuevaUrl}>
         {loading && <div className="mini-loading" />}
         {name}

@@ -13,6 +13,7 @@ import Vehicles from "./vehicles/Vehicles.tsx";
 import SpeciesPage from "./species/SpeciesPage.tsx";
 import VehiclePage from "./vehicles/VahiclePage.tsx";
 import Films from "./films/Films.tsx";
+import FilmsPage from "./films/FilmPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/vehicles/:personId",
     element: <VehiclePage />,
+  },
+  {
+    path: "/films/:personId",
+    element: <FilmsPage />,
   },
 ]);
 
