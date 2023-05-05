@@ -8,12 +8,9 @@ export default function Spec(props: species) {
     classification,
     designation,
     eye_colors,
-    films,
     hair_colors,
-    homeworld,
     language,
     name,
-    people,
     url,
   } = props;
   const navigate = useNavigate();

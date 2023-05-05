@@ -14,7 +14,6 @@ export default function Bigspecie(props: species) {
     language,
     name,
     people,
-    url,
   } = props;
   //   const [loading, setLoading] = useState(false);
 
