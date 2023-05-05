@@ -1,7 +1,7 @@
 import "../styles.css";
 import { useEffect, useState } from "react";
-import Person from "./Person.tsx";
 import { Header } from "../header.tsx";
+import Planet from "./Planet.tsx";
 export interface Planets {
   name: string;
   climate: string;
@@ -10,7 +10,7 @@ export interface Planets {
   gravity: string;
   orbital_period: string;
   population: string;
-  residents: string;
+  residents: Array<string>;
   rotation_period: string;
   surface_water: string;
   terrain: string;
@@ -28,7 +28,7 @@ export default function Planets() {
       gravity: "",
       orbital_period: "",
       population: "",
-      residents: "",
+      residents: [],
       rotation_period: "",
       surface_water: "",
       terrain: "",
@@ -55,7 +55,7 @@ export default function Planets() {
 
       <div className="grid top-margin">
         {planets.map((detail) => (
-          <Person {...detail} />
+          <Planet {...detail} />
         ))}
       </div>
     </div>

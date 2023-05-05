@@ -34,10 +34,7 @@ export default function Person(props: People) {
       <div className="item-box">Eye color: {eye_color}</div>
       <div className="item-box">Gender: {gender}</div>
       <div className="item-box">Mass: {mass}</div>
-      {/* <div>Fims: {films}</div> */}
       <div className="item-box">Hair color: {hair_color}</div>
-      {/* <div className="item-box">Homeworld: {homeworld}</div> */}
-      {/* {loading && <div className="loading" />} */}
       <div className="item-box">Skin color: {skin_color}</div>
     </button>
   );

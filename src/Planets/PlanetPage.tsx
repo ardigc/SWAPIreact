@@ -1,27 +1,25 @@
 import { useParams } from "react-router-dom";
 import "../styles.css";
 import { useEffect, useState } from "react";
-import BigPerson from "./BigPerson.tsx";
 import { Header } from "../header.tsx";
-import { People } from "./Planets.tsx";
+import { Planets } from "./Planets.tsx";
+import BigPlanet from "./BigPlanet.tsx";
 
-export default function PersonPage() {
+export default function PlanetPage() {
   const [loading, setLoading] = useState(false);
-  const [person, setPerson] = useState<People>({
-    homeworld: "",
-    starships: [],
-    species: [],
-    vehicles: [],
-    mass: "",
-    skin_color: "",
-    url: "",
+  const [planet, setPlanet] = useState<Planets>({
     name: "",
-    height: "",
-    birth_year: "",
-    eye_color: "",
-    gender: "",
+    climate: "",
+    diameter: "",
     films: [],
-    hair_color: "",
+    gravity: "",
+    orbital_period: "",
+    population: "",
+    residents: [],
+    rotation_period: "",
+    surface_water: "",
+    terrain: "",
+    url: "",
   });
   const params = useParams();
   const id = params.personId;
@@ -29,11 +27,10 @@ export default function PersonPage() {
     fetch("https://swapi.dev/api/people/" + id)
       .then((res) => res.json())
       .then((body) => {
-        setPerson(body);
+        setPlanet(body);
         setLoading(false);
       });
   }, []);
-  console.log(person);
 
   // console.log(person.homeworld);
   return (
@@ -42,7 +39,7 @@ export default function PersonPage() {
       {loading && <div className="loading" />}
 
       <div className="grid-big top-margin">
-        <BigPerson {...person} />
+        <BigPlanet {...planet} />
       </div>
     </div>
   );
