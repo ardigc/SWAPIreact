@@ -8,6 +8,8 @@ import StarShips from "./Ships/StarShips.tsx";
 import Planets from "./Planets/Planets.tsx";
 import ShipPage from "./Ships/ShipPage.tsx";
 import PlanetPage from "./Planets/PlanetPage.tsx";
+import Species from "./species/Species.tsx";
+import SpeciesPage from "./species/SpeciesPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
     element: <Planets />,
   },
   {
+    path: "/species",
+    element: <Species />,
+  },
+  {
     path: "/people/:personId",
     element: <PersonPage />,
   },
@@ -37,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/planets/:personId",
     element: <PlanetPage />,
+  },
+  {
+    path: "/species/:personId",
+    element: <SpeciesPage />,
   },
 ]);
 
