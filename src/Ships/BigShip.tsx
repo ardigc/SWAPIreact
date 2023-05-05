@@ -1,4 +1,4 @@
-import NameInt from "./NameInt.tsx";
+import NameInt from "../NameInt.tsx";
 import { Ships } from "./StarShips.tsx";
 export default function BigShip(props: Ships) {
   let {

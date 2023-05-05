@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import PersonPage from "./People/PersonPage.tsx";
 import StarShips from "./Ships/StarShips.tsx";
+import Planets from "./Planets/Planets.tsx";
 import ShipPage from "./Ships/ShipPage.tsx";
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/starships",
     element: <StarShips />,
+  },
+  {
+    path: "/planets",
+    element: <Planets />,
   },
   {
     path: "/people/:personId",
