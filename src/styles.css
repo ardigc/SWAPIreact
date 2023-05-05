@@ -104,7 +104,7 @@
   display: grid;
   grid-template-areas: "name name name";
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 4rem repeat(3, 3.5rem);
+  grid-template-rows: 4rem repeat(3, 4rem);
   border: solid 1px black;
   background-color: #202327;
   color: #c8c8c8;
