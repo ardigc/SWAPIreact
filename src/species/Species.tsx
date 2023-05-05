@@ -14,28 +14,25 @@ export interface species {
   language: string;
   name: string;
   people: Array<string>;
-
-  url: "https://swapi.dev/api/species/1/";
+  url: string;
 }
 
 export default function Species() {
   const [loading, setLoading] = useState(false);
   const [species, setspecies] = useState<species[]>([
     {
-      homeworld: "",
-      starships: [],
-      species: [],
-      vehicles: [],
-      mass: "",
-      skin_color: "",
-      url: "",
-      name: "",
-      height: "",
-      birth_year: "",
-      eye_color: "",
-      gender: "",
+      average_height: "",
+      average_lifespan: "",
+      classification: "",
+      designation: "",
+      eye_colors: "",
       films: [],
-      hair_color: "",
+      hair_colors: "",
+      homeworld: "",
+      language: "",
+      name: "",
+      people: [],
+      url: "",
     },
   ]);
 

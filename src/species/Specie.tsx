@@ -3,14 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { species } from "./Species.tsx";
 export default function Spec(props: species) {
   let {
+    average_height,
+    average_lifespan,
+    classification,
+    designation,
+    eye_colors,
+    films,
+    hair_colors,
+    homeworld,
+    language,
     name,
-    height,
-    birth_year,
-    eye_color,
-    gender,
-    hair_color,
-    mass,
-    skin_color,
+    people,
     url,
   } = props;
   const navigate = useNavigate();
@@ -30,13 +33,13 @@ export default function Spec(props: species) {
       onClick={() => clickHandler()}
     >
       <div className="name-box">{name}</div>
-      <div className="item-box">Height: {height}</div>
-      <div className="item-box">Birth year: {birth_year}</div>
-      <div className="item-box">Eye color: {eye_color}</div>
-      <div className="item-box">Gender: {gender}</div>
-      <div className="item-box">Mass: {mass}</div>
-      <div className="item-box">Hair color: {hair_color}</div>
-      <div className="item-box">Skin color: {skin_color}</div>
+      <div className="item-box">Average height: {average_height}</div>
+      <div className="item-box">Average lifespan: {average_lifespan}</div>
+      <div className="item-box">Clasification: {classification}</div>
+      <div className="item-box">Designation: {designation}</div>
+      <div className="item-box">Eye colors: {eye_colors}</div>
+      <div className="item-box">Hair colors: {hair_colors}</div>
+      <div className="item-box">Languaje: {language}</div>
     </button>
   );
 }

@@ -6,15 +6,13 @@ export default function NameInt(props: { urls: string }) {
   const [name, setName] = useState("");
   // console.log(urls);
   const nuevaUrl = urls.substring("https://swapi.dev/api".length);
-  console.log(nuevaUrl);
+  // console.log(nuevaUrl);
   useEffect(() => {
     setLoading(true);
     // hay id? si hay id, busca ese people
-    // console.log(urls);
     fetch(urls)
       .then((res) => res.json())
       .then((body) => {
-        console.log(body);
         if (body.name === undefined) {
           setName(body.title);
         } else {

@@ -3,19 +3,18 @@ import { species } from "./Species.tsx";
 import NameInt from "../NameInt.tsx";
 export default function Bigspecie(props: species) {
   let {
-    name,
-    height,
-    birth_year,
-    eye_color,
-    gender,
+    average_height,
+    average_lifespan,
+    classification,
+    designation,
+    eye_colors,
     films,
-    hair_color,
+    hair_colors,
     homeworld,
-    mass,
-    skin_color,
-    species,
-    starships,
-    vehicles,
+    language,
+    name,
+    people,
+    url,
   } = props;
   //   const [loading, setLoading] = useState(false);
 
@@ -31,14 +30,18 @@ export default function Bigspecie(props: species) {
   //   }, []);
 
   // films.map((film) => console.log(film));
+  console.log(homeworld);
+  console.log(films[1]);
   return (
-    <div className="grid-specie-big">
+    <div className="grid-person-big">
       <div className="name-box">{name}</div>
-      <div className="item-box">Height: {height}</div>
-      <div className="item-box">Birth year: {birth_year}</div>
-      <div className="item-box">Eye color: {eye_color}</div>
-      <div className="item-box">Gender: {gender}</div>
-      <div className="item-box">Mass: {mass}</div>
+      <div className="item-box">Average height: {average_height}</div>
+      <div className="item-box">Average lifespan: {average_lifespan}</div>
+      <div className="item-box">Clasification: {classification}</div>
+      <div className="item-box">Designation: {designation}</div>
+      <div className="item-box">Eye colors: {eye_colors}</div>
+      <div className="item-box">Hair colors: {hair_colors}</div>
+      <div className="item-box">Languaje: {language}</div>
       <div className="item-box">
         Fims:{" "}
         {films.map((urls) => (
@@ -46,30 +49,14 @@ export default function Bigspecie(props: species) {
         ))}
       </div>
       <div className="item-box">
-        Homeworld : <NameInt urls={homeworld} />
+        Homeworld: <NameInt urls={homeworld} />
       </div>
       <div className="item-box">
-        Starships:{" "}
-        {starships.map((urls) => (
+        People:{" "}
+        {people.map((urls) => (
           <NameInt urls={urls} />
         ))}
       </div>
-      <div className="item-box">
-        Species:{" "}
-        {species.map((urls) => (
-          <NameInt urls={urls} />
-        ))}
-      </div>
-      <div className="item-box">
-        Vehicles:{" "}
-        {vehicles.map((urls) => (
-          <NameInt urls={urls} />
-        ))}
-      </div>
-      <div className="item-box">Hair color: {hair_color}</div>
-      {/* <div className="item-box">Homeworld: {homeworld}</div> */}
-      {/* {loading && <div className="loading" />} */}
-      <div className="item-box">Skin color: {skin_color}</div>
     </div>
   );
 }

@@ -8,22 +8,18 @@ import Bigspecie from "./BigSpecie.tsx";
 export default function SpeciesPage() {
   const [loading, setLoading] = useState(false);
   const [species, setSpecies] = useState<species>({
-    MGLT: "",
-    cargo_capacity: "",
-    consumables: "",
-    cost_in_credits: "",
-    crew: "",
+    average_height: "",
+    average_lifespan: "",
+    classification: "",
+    designation: "",
+    eye_colors: "",
     films: [],
-    hyperdrive_rating: "",
-    length: "",
-    manufacturer: "",
-    max_atmosphering_speed: "",
-    model: "",
+    hair_colors: "",
+    homeworld: "",
+    language: "",
     name: "",
-    passengers: "",
-    pilots: [],
+    people: [],
     url: "",
-    starship_class: "",
   });
   const params = useParams();
   const id = params.personId;
